@@ -1,0 +1,87 @@
+.top{
+    width: 50%;
+    @media  (max-width: 500px)	{
+		width: 70%;
+	}
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+input{
+    width: 60%;
+    background-color: rgb(92, 92, 92);
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    color: white;
+    padding: 0 10px;
+    font-size: 20px;
+    position: relative;
+    background-image: url('https://www.nicepng.com/png/full/65-659698_search-icon-without-background.png');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size:25px
+
+}
+::placeholder{
+    color:lightgray
+}
+  
+  input {
+    padding: 10px 35px;
+  }
+.menu{
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    &:hover{
+        border: 1.5px solid white
+    }
+    .dots{
+        align-self: center;
+        height: 28px;
+        cursor: pointer;
+        
+    }
+   
+    }
+
+    .cities__container {
+        z-index: 10;
+        position: absolute;
+        left: 25%;
+        width: 50%;
+        text-align: left;
+        
+        
+    }
+    .cities__block {
+        background-color: grey;
+        
+        &-item:first-of-type
+        {
+            border-top: 1px solid white;
+        }
+            // .cities__block-item
+    
+            &-item {
+                padding: 5px 0px;
+                padding-left: 20px;
+                border: 1px solid white;
+                border-top: none;
+                cursor: pointer;
+                transition: 100ms ease-in;
+            }
+            :hover{
+                background-color: rgb(70, 70, 70);
+            }
+    }
+    

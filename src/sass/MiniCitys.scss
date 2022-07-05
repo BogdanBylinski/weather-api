@@ -1,0 +1,97 @@
+.city__container{
+	cursor: pointer;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 50%;
+	@media  (max-width: 500px)	{
+		width: 70%;
+	}
+	align-items: center;
+	margin: 50px auto;
+
+}
+.city__block {
+	position: relative;
+
+	color: white;
+	background-color: rgb(1, 175, 187);
+	border-radius: 10px;
+	width: 100%;
+	height: 100px;
+	// margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	transition: 100ms;
+	&:hover{
+	opacity: .75;
+	
+	}
+}
+.city__block_item {
+		display: flex;
+		justify-content: space-between;
+		gap: 5px;
+		padding: 0px 30px;
+		width: 80%;
+
+		// .city__block_item-big
+
+		&-big {
+			margin-top: 10px;
+			align-self: center;
+			display: flex;
+			flex-direction: column;
+			span{
+				align-self: flex-start;
+			}
+			// margin-left: 50px;
+		}
+		&-temp{
+			font-size: 2rem;
+			@media (min-width: 500px){
+				font-size: 3rem;
+			}
+			
+			// margin-right: 50px;
+		}
+
+		// .city__block_item-small
+
+		&-small {
+		}
+}
+.deleteActive{
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: -10%;
+	@media  (max-width: 500px)	{
+		left: -15%
+	}
+	top: 35px;
+	z-index: 10;
+	.delete{
+		width: 20px;
+		background-color: white;
+		height: 5px;
+		border-radius: 5px;
+	}
+}
+.deleteDisabled{
+	display: none;
+}
+.miniCity{
+	display: flex;
+	width: 100%;
+	gap: 5px;
+	justify-content: center;
+}
