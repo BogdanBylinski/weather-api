@@ -28,7 +28,7 @@ function CityWeather() {
     const getCityWeather =(params)=>{
         axios
         .get(
-          `http://api.weatherapi.com/v1/forecast.json?key=f1a889498689468fba864916221906&q=${params}&days=10&aqi=no&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=f1a889498689468fba864916221906&q=${params}&days=10&aqi=no&alerts=no`
         )
         .then((res) => {
           console.log(res.data);

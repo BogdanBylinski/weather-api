@@ -53,7 +53,7 @@ find()
   const find = async (e)=>{
     if(search.length>=3){
    await axios
-   .get(`http://api.weatherapi.com/v1/search.json?key=f1a889498689468fba864916221906&q=${search}`)
+   .get(`https://api.weatherapi.com/v1/search.json?key=f1a889498689468fba864916221906&q=${search}`)
    .then((res) => {
      console.log(res.data);
      setCities(res.data)

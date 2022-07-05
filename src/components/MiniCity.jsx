@@ -45,7 +45,7 @@ function MiniCity({ prop, dots, setList, list }) {
     if (prop) {
       axios
         .get(
-          `http://api.weatherapi.com/v1/forecast.json?key=f1a889498689468fba864916221906&q=${prop}&days=1&aqi=no&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=f1a889498689468fba864916221906&q=${prop}&days=1&aqi=no&alerts=no`
         )
         .then((res) => {
           console.log(res.data);
