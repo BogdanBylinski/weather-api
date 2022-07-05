@@ -5,6 +5,8 @@ import Home from "./components/Home";
 
 function App() {
   return (
+    <div className="hi">
+
     <BrowserRouter>
       <Routes>
       <Route index element={<Home ></Home>}></Route>
@@ -14,6 +16,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
