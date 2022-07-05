@@ -1,6 +1,202 @@
 .main{
+    font-size: 20px;
     width: 100vw;
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
 }
+.oneCity__top {
+    letter-spacing: 1.5px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    // .oneCity__top-city
+    
+    &-city {
+        padding: 50px auto;
+        font-size: 50px;
+        font-weight: 300;
+    }
+
+    // .oneCity__top-temp
+
+    &-temp {
+        font-weight: 200;
+        font-size: 100px;
+        padding-left: 30px;
+    }
+
+    // .oneCity__top-bottom
+
+    &-bottom {
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &-weather{}
+        &-HL{}
+    }
+}
+
+
+.oneCity__grid_hourly {
+}
+.oneCity__grid_forecast {
+}
+.oneCity__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // background-color: rgba(60, 255, 0, 0.534);
+        width: 100%;
+        min-height: 50vh;
+        margin: 0 auto;
+        // gap: 15px;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 70px;
+
+		&-item{
+        // background-color: rgba(0, 110, 255, 0.534);
+        background-color: #1c9bf648;
+        width: 90%;
+        height: 170px;
+        margin: 10px auto;
+        border-radius: 10px;display: flex;
+    flex-direction: column;
+        }
+}
+
+.oneCity__grid-item {
+
+    
+    &-uv{
+        
+    }
+    &-sunset{
+
+    }
+    &-wind {
+
+    }
+    &-totalprecip{
+
+    }
+    &-feelsLike{
+        
+    }
+    &-humidity{
+
+    }
+    &-visibility{
+
+    }
+    &-pressure{
+
+    }
+}
+
+
+
+.item__row {
+    
+    padding: 5px 10px;
+    // .item__row-top
+
+    &-top {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        text-transform: uppercase;
+        color: #e3f4fea6;
+        font-size: 15px;
+        font-weight:500;
+        padding: 10px 15px;
+        padding-bottom: 0;
+        }
+        
+    // .item__row-body
+
+    &-body {
+        padding: 10px 15px;
+        font-size: 30px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        span{
+            font-size: 20px;
+        }
+    }
+
+    // .item__row-footer
+
+    &-footer {
+        padding: 10px 15px;
+        font-size: 15px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+      
+    }
+}
+.item__row-wind-body{
+    height: 140px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    position: relative;
+    .windSpeed{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 128,214);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color:white;
+        font-size: 15px;
+        span{
+            font-size: 10px;
+        }
+        z-index: 2;
+        left: 36%;
+        top: 33%;
+    }
+    .windArrow{
+        background: rgba(255, 255, 255, 0.8);
+        height: 80%;
+        left: 49.5%;
+        position: absolute;
+        top: 10%;
+        transform-origin: 50% 50%;
+        width: 1%;
+        // transform: rotateZ(0deg);
+        z-index: 1;
+        &:after{
+            content: '';
+            width: 0; 
+            height: 0; 
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 10px solid rgba(255, 255, 255, 0.8);
+            position: absolute;
+            right: -4px;
+    top: -4px;
+    transform: rotateZ(270deg);
+              }
+            
+        }
+    }
+    .item__row-rain-body{
+        padding: 10px 15px;
+        font-size: 30px;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
