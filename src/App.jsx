@@ -6,8 +6,8 @@ import Home from "./components/Home";
 function App() {
   return (
     <>
-    <Home></Home>
     <BrowserRouter>
+    <Home></Home>
       <Routes>
       <Route index element={<Home ></Home>}></Route>
       <Route path="/" element={<Home ></Home>}></Route>
