@@ -102,7 +102,7 @@ function CityWeather() {
               <WiStrongWind/> Wind
             </div>
             <div className="item__row-wind-body" style={{backgroundImage:`url(${Compass})`}}>
-              <div className="windArrow" style={{transform: `rotateZ(${windDir.indexOf(city.current.wind_dir)*22.5}deg)`}}></div>
+              <div className="windArrow" style={{transform: `rotateZ(${windDir.indexOf(city.current.wind_dir+1)*22.5}deg)`}}></div>
               <div className="windSpeed">{city.current.wind_kph}<span>km/h</span></div>
             </div>
           </div>

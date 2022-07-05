@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CityWeather from "./components/CityWeather";
-import Home from "./components/Home";
+import CityWeather from "./CityWeather";
+import Home from "./Home";
 
 function Main() {
   return (
-    <>
+    <>.
     <BrowserRouter>
       <Routes>
       <Route index element={<Home ></Home>}></Route>
