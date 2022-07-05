@@ -9,6 +9,7 @@ function App() {
       <Routes>
       <Route index element={<Home ></Home>}></Route>
       <Route path="/" element={<Home ></Home>}></Route>
+      <Route path="/home" element={<Home ></Home>}></Route>
       <Route path="/city/:name" element={<CityWeather></CityWeather>}></Route>
 
       </Routes>
