@@ -71,8 +71,8 @@ function MiniCity({ prop, dots, setList, list }) {
   }, [prop, time, update]);
 
   const remove = (e) => {
-    e.nativeEvent.stopImmediatePropagation();
-    e.stopPropagation()
+    // e.nativeEvent.stopImmediatePropagation();
+    // e.stopPropagation()
     const newList = list.filter((cities) => cities !== e);
     setList(newList);
     localStorage.setItem("list", JSON.stringify(newList));
@@ -80,37 +80,41 @@ function MiniCity({ prop, dots, setList, list }) {
   const dayOrNight = () => {
     if (
       city.current.condition.icon
-        .split("//cdn.weatherapi.com/weather/64x64/")[1]
-        .split("/")[0] === "night"
-    ) {
-      return night;
-    } else {
-      return day;
-    }
-  };
-
-  const navigate = useNavigate()
-  const navigation =(e)=>{
+      .split("//cdn.weatherapi.com/weather/64x64/")[1]
+      .split("/")[0] === "night"
+      ) {
+        return night;
+      } else {
+        return day;
+      }
+    };
+    
+    const navigate = useNavigate()
+    const navigation =(e)=>{
     e.nativeEvent.stopImmediatePropagation();
     e.stopPropagation()
+    
     navigate('/city/'+ city.location.name)
   }
   return city ? (
     <>
-      <div className="miniCity" onClick={(e)=>navigation(e)}>
+    <div className="city__holder">
+
+      <div className="miniCity" >
+        
         <div
-          className="city__block"
+          className="city__block" onClick={(e)=>navigation(e)}
           style={{ background: `url(${dayOrNight()})` }}
         >
-          <div
+          {/* <div
             className={deleteButton}
             onClick={(e) => remove(city.location.name)}
           >
             <div
               className="delete"
-              // onClick={(e) => remove(city.location.name)}
+              onClick={(e) => remove(city.location.name)}
             ></div>
-          </div>
+          </div> */}
           <div className="city__block_item">
             <div className="city__block_item-big">
               {city.location.name}
@@ -135,6 +139,17 @@ function MiniCity({ prop, dots, setList, list }) {
           </div>
         </div>
       </div>
+      <div
+            className={deleteButton}
+            onClick={(e) => remove(city.location.name)}
+          >
+            <div
+              className="delete"
+              onClick={(e) => remove(city.location.name)}
+            ></div>
+          </div>
+    </div>
+
     </>
   ) : (
     ""
