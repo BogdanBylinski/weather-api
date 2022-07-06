@@ -94,7 +94,7 @@ function MiniCity({ prop, dots, setList, list }) {
     e.nativeEvent.stopImmediatePropagation();
     e.stopPropagation()
     
-    navigate('/city/'+ city.location.name)
+    navigate('/weather-api/city/'+ city.location.name)
   }
   return city ? (
     <>
