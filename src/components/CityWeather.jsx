@@ -12,6 +12,7 @@ import { WiThermometer } from "react-icons/wi";
 import { WiHumidity } from "react-icons/wi";
 import { WiBarometer } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
+import { BsCalendar3 } from "react-icons/bs";
 import Compass from '../assets/img/compass.png';
 
 function CityWeather() {
@@ -52,7 +53,22 @@ function CityWeather() {
       };
       const windDir =['NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N']
       const uvIndex = ['Low', 'Low', 'Moderate','Moderate','Moderate','High','High','Very High','Very High','Very High','Extreme']
-    
+      const uvIndexBar = ()=>{
+        if (city && city.current.uv > 10){
+          console.log(95);
+        }
+          else if (city ){
+
+            return(city.current.uv * 10 - 5)
+
+          }
+        }
+        const getDayName = (forecastday) =>{
+          let date = new Date(forecastday);
+          let day = date.toLocaleString('en-us', {weekday: 'short'});
+          return day
+        }
+      
   return city? (
     <div className='main'  style={{ backgroundImage: `url(${dayOrNight()})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
       <div className="oneCity__top">
@@ -66,7 +82,60 @@ function CityWeather() {
         </div>
       </div>
         <div className="oneCity__grid_hourly"></div>
-        <div className="oneCity__grid_forecast"></div>
+        <div className="oneCity__forecast">
+          <div className="oneCity__forecast-top">
+            <BsCalendar3/> 3-Day forecast
+          </div>
+          <div className="oneCity__forecast-body">
+            <div className="oneCity__forecast-body-item">
+            <div className="oneCity__forecast-body-item-day">
+            {getDayName(city.forecast.forecastday[0].date)}</div>
+            <div className="oneCity__forecast-body-item-clouds">
+              <img src={city.forecast.forecastday[0].day.condition.icon} alt="icon" />
+             <span>
+               {city.forecast.forecastday[0].day.daily_will_it_rain === 1? `${city.forecast.forecastday[0].day.daily_chance_of_rain}%` : ''
+}
+               </span> 
+            </div>
+            <div className="oneCity__forecast-body-item-temps">
+              <span>L:{city.forecast.forecastday[0].day.mintemp_c}<span>&#xb0;</span></span>
+              <span>H:{city.forecast.forecastday[0].day.maxtemp_c}<span>&#xb0;</span></span>
+            </div>
+            </div>
+            <div className="oneCity__forecast-body-item">
+            <div className="oneCity__forecast-body-item-day">
+            {getDayName(city.forecast.forecastday[1].date)}</div>
+            <div className="oneCity__forecast-body-item-clouds">
+              <img src={city.forecast.forecastday[1].day.condition.icon} alt="icon" />
+             <span>
+               {city.forecast.forecastday[1].day.daily_will_it_rain === 1? `${city.forecast.forecastday[1].day.daily_chance_of_rain}%` : ''
+}
+               </span> 
+            </div>
+            <div className="oneCity__forecast-body-item-temps">
+              <span>L:{city.forecast.forecastday[1].day.mintemp_c}<span>&#xb0;</span></span>
+              <span>H:{city.forecast.forecastday[1].day.maxtemp_c}<span>&#xb0;</span></span>
+            </div>
+            </div>
+            <div className="oneCity__forecast-body-item">
+            <div className="oneCity__forecast-body-item-day">
+            {getDayName(city.forecast.forecastday[2].date)}</div>
+            <div className="oneCity__forecast-body-item-clouds">
+              <img src={city.forecast.forecastday[2].day.condition.icon} alt="icon" />
+             <span>
+               {city.forecast.forecastday[2].day.daily_will_it_rain === 1? `${city.forecast.forecastday[2].day.daily_chance_of_rain}%` : ''
+}
+               </span> 
+            </div>
+            <div className="oneCity__forecast-body-item-temps">
+              <span>L:{city.forecast.forecastday[2].day.mintemp_c}<span>&#xb0;</span></span>
+              <span>H:{city.forecast.forecastday[2].day.maxtemp_c}<span>&#xb0;</span></span>
+            </div>
+            </div>
+          </div>
+          
+            
+        </div>
       <div className="oneCity__grid">
         <div className="oneCity__grid-item">
           <div className="oneCity__grid-item-uv">
@@ -76,6 +145,10 @@ function CityWeather() {
             <div className="item__row-body">
               {city.current.uv}
             <span>{uvIndex[city.current.uv-1]}</span>
+            </div>
+            <div className="uvIndexBar">
+              <div className="uvBig"></div>
+              <div className="uvSmall" style={{left: `${uvIndexBar()}%`}}></div>
             </div>
             <div className="item__row-footer">
               Lorem ipsum dolor sit amet.
@@ -102,7 +175,7 @@ function CityWeather() {
               <WiStrongWind/> Wind
             </div>
             <div className="item__row-wind-body" style={{backgroundImage:`url(${Compass})`}}>
-              <div className="windArrow" style={{transform: `rotateZ(${windDir.indexOf(city.current.wind_dir+1)*22.5}deg)`}}></div>
+              <div className="windArrow" style={{transform: `rotateZ(${(windDir.indexOf(city.current.wind_dir)+1)*22.5}deg)`}}></div>
               <div className="windSpeed">{city.current.wind_kph}<span>km/h</span></div>
             </div>
           </div>
@@ -142,6 +215,9 @@ function CityWeather() {
           <div className="oneCity__grid-item-pressure">
           <div className="item__row-top">
              <WiBarometer/> Pressure
+            </div>
+            <div className="item__row-body">
+              {city.current.pressure_mb} <span>hpa</span>
             </div>
           </div>
         </div>
