@@ -6,8 +6,16 @@ import Main from "./components/Main";
 
 function App() {
   return (<>
-  .
-    <Main></Main>
+   <BrowserRouter>
+      <Routes>
+      <Route index element={<Home></Home>}></Route>
+      <Route path="/" element={<Home></Home>}></Route>
+      <Route path="/weather-api" element={<Home></Home>}></Route>
+      <Route path="/city/:name" element={<CityWeather></CityWeather>}></Route>
+
+      </Routes>
+      {/* <Home></Home> */}
+    </BrowserRouter>
   </>
   );
 }

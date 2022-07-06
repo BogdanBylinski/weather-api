@@ -14,6 +14,7 @@ function Main() {
       <Route path="/city/:name" element={<CityWeather></CityWeather>}></Route>
 
       </Routes>
+      <Home></Home>
     </BrowserRouter>
     </>
   );
