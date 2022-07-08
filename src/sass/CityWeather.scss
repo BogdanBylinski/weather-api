@@ -233,7 +233,7 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
 
 
 .oneCity__forecast {
-    width: 370px;
+    width: 95%;
     min-height: 210px;
     background-color: #1c9bf648;
     margin: 20px 0px 10px 10px;
@@ -298,4 +298,42 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
         justify-content: space-between;
         color: white;
     }
+}
+
+
+
+.oneCity__grid_hourly{
+    width: 95%;
+    margin: 0 auto;
+    min-height: 130px;
+    background-color: rgba(28, 155, 246, 0.2823529412);
+    margin: 20px 0px 10px 10px;
+    border-radius: 10px;
+    // .swiper{
+    //     min-height: 100px;
+    //     .swiper_wrapper{
+    //         height: 100%;
+    //     }
+    // }
+}
+.hourly__row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 0px 10px;
+    &-item{
+        color: white;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        .temp{
+            color: white;
+        }
+    }
+    
+}
+.swiper-slide{
+    width: 25px;
 }

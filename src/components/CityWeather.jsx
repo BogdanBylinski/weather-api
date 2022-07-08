@@ -13,7 +13,9 @@ import { WiHumidity } from "react-icons/wi";
 import { WiBarometer } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
 import { BsCalendar3 } from "react-icons/bs";
+import { AiOutlineClockCircle } from "react-icons/ai";
 import Compass from '../assets/img/compass.png';
+import HourlyForecast from './HourlyForecast';
 
 function CityWeather() {
     const [city, setCity] = useState('')
@@ -81,7 +83,12 @@ function CityWeather() {
               <span>&#xb0;</span></div>
         </div>
       </div>
-        <div className="oneCity__grid_hourly"></div>
+        <div className="oneCity__grid_hourly">
+        <div className="oneCity__forecast-top">
+            <AiOutlineClockCircle/> 24 hours forecast
+          </div>
+          <HourlyForecast city={city} ></HourlyForecast>
+        </div>
         <div className="oneCity__forecast">
           <div className="oneCity__forecast-top">
             <BsCalendar3/> 3-Day forecast
