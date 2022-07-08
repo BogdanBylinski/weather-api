@@ -75,7 +75,7 @@ function CityWeather() {
     <div className='main'  style={{ backgroundImage: `url(${dayOrNight()})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
       <div className="oneCity__top">
         <div className="oneCity__top-city">{city.location.name}</div>
-        <div className="oneCity__top-temp">{city.current.temp_c}<span>&#xb0;</span></div>
+        <div className="oneCity__top-temp">{Math.floor(city.current.temp_c)}<span>&#xb0;</span></div>
         <div className="oneCity__top-bottom">
         <div className="oneCity__top-bottom-weather">{city.current.condition.text}</div>
         <div className="oneCity__top-bottom-HL">H:{city.forecast.forecastday[0].day.maxtemp_c}
@@ -105,8 +105,8 @@ function CityWeather() {
                </span> 
             </div>
             <div className="oneCity__forecast-body-item-temps">
-              <span>L:{city.forecast.forecastday[0].day.mintemp_c}<span>&#xb0;</span></span>
-              <span>H:{city.forecast.forecastday[0].day.maxtemp_c}<span>&#xb0;</span></span>
+              <span>L:{Math.floor(city.forecast.forecastday[0].day.mintemp_c)}<span>&#xb0;</span></span>
+              <span>H:{Math.floor(city.forecast.forecastday[0].day.maxtemp_c)}<span>&#xb0;</span></span>
             </div>
             </div>
             <div className="oneCity__forecast-body-item">
@@ -120,8 +120,8 @@ function CityWeather() {
                </span> 
             </div>
             <div className="oneCity__forecast-body-item-temps">
-              <span>L:{city.forecast.forecastday[1].day.mintemp_c}<span>&#xb0;</span></span>
-              <span>H:{city.forecast.forecastday[1].day.maxtemp_c}<span>&#xb0;</span></span>
+              <span>L:{Math.floor(city.forecast.forecastday[1].day.mintemp_c)}<span>&#xb0;</span></span>
+              <span>H:{Math.floor(city.forecast.forecastday[1].day.maxtemp_c)}<span>&#xb0;</span></span>
             </div>
             </div>
             <div className="oneCity__forecast-body-item">
@@ -135,8 +135,8 @@ function CityWeather() {
                </span> 
             </div>
             <div className="oneCity__forecast-body-item-temps">
-              <span>L:{city.forecast.forecastday[2].day.mintemp_c}<span>&#xb0;</span></span>
-              <span>H:{city.forecast.forecastday[2].day.maxtemp_c}<span>&#xb0;</span></span>
+            <span>L:{Math.floor(city.forecast.forecastday[2].day.mintemp_c)}<span>&#xb0;</span></span>
+              <span>H:{Math.floor(city.forecast.forecastday[2].day.maxtemp_c)}<span>&#xb0;</span></span>
             </div>
             </div>
           </div>

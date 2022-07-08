@@ -46,7 +46,7 @@ export default function HourlyForecast(city) {
           <div className="hourly__row">
             <div className="hourly__row-item">Now</div>
             <div className="hourly__row-item"><img src={`${city.city.current.condition.icon}`} alt="" /></div>
-            <div className="hourly__row-item"><div className="temp">{city.city.current.temp_c}<span>&#xb0;</span></div></div>
+            <div className="hourly__row-item"><div className="temp">{Math.floor(city.city.current.temp_c)}<span>&#xb0;</span></div></div>
           </div>
 
           }</SwiperSlide>
