@@ -19,7 +19,7 @@ import HourlyForecast from './HourlyForecast';
 
 function CityWeather() {
     const [city, setCity] = useState('')
-
+    const radius = 50
 
     let params = useParams()
 
@@ -209,6 +209,32 @@ function CityWeather() {
           <div className="item__row-top">
              <WiHumidity/> Humidity
             </div>
+            <div className="item__row-body">
+            {/* <div class="gauge">
+  <div class="gauge__body">
+    <div class="gauge__fill" style={{transform: `rotate(${city.current.humidity/100 / 2}turn)`}}></div>
+    <div class="gauge__cover">{city.current.humidity}%</div>
+  </div> */}
+  <div id="wrapper">
+    <svg id="meter">
+    <circle id="outline_curves" r={radius} cx="50%" cy="50%" stroke="#999"
+stroke-width="8" strokeDasharray={`${radius*Math.PI}, ${radius*Math.PI*2}`} fill="none">
+</circle>
+    <circle id="low" r={radius} cx="50%" cy="50%" stroke="#fff"
+stroke-width="6" strokeDasharray={`${radius*Math.PI}, ${radius*Math.PI*2}`} fill="none">
+</circle>
+<circle id="mask" r={radius} cx="50%" cy="50%" stroke="#999"
+stroke-width="6" strokeDasharray={`${radius*Math.PI / (100/(100-city.current.humidity))}, ${radius*Math.PI*2}`} fill="none">
+</circle>
+<circle id="outline_ends" r={radius} cx="50%" cy="50%" stroke="#999"
+stroke-width="8" strokeDasharray={`2, ${radius*Math.PI*2}`} fill="none">
+</circle>
+    </svg>
+    <div className="humidity">{city.current.humidity} %</div>
+</div>
+
+</div>
+            {/* </div> */}
           </div>
         </div>
         <div className="oneCity__grid-item">
