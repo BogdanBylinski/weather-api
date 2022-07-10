@@ -140,8 +140,8 @@ function CityWeather() {
         <div className="oneCity__top-temp">{Math.floor(city.current.temp_c)}<span>&#xb0;</span></div>
         <div className="oneCity__top-bottom">
         <div className="oneCity__top-bottom-weather">{city.current.condition.text}</div>
-        <div className="oneCity__top-bottom-HL">H:{city.forecast.forecastday[0].day.maxtemp_c}
-              <span>&#xb0;</span> L:{city.forecast.forecastday[0].day.mintemp_c}
+        <div className="oneCity__top-bottom-HL">H:{Math.floor(city.forecast.forecastday[0].day.maxtemp_c)}
+              <span>&#xb0;</span> L:{Math.floor(city.forecast.forecastday[0].day.mintemp_c)}
               <span>&#xb0;</span></div>
         </div>
       </div>
