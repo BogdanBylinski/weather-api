@@ -1,14 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 function Days({ city, today }) {
   const [maxTemp, setMaxTemp] = useState(0);
   const [minTemp, setMinTemp] = useState(0);
-  const [leftLine, setLeftLine] = useState();
-  const [rightLine, setRightLine] = useState();
-  const [midLine, setMidLine] = useState();
-  const [positionCircle, setPositionCircle] = useState(0);
-  const [day, setDay]=useState('')
-//   const [dayNow, setDayNow]=useState('')
-  let dayNow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date().getDay()]
+
   
   const getDayName = (forecastday) =>{
     let date = new Date(forecastday);
@@ -17,12 +12,7 @@ function Days({ city, today }) {
     return day
   }
 
-//   useEffect(() => {
-//     if (city && minTemp&&  maxTemp) {
-//         setMaxTemp(maxas)
-//         setMinTemp(minas)
-//     }
-//   }, [city, minas, maxas]);
+
 useEffect(()=>{
     if (city){ 
       let temp =[] 
@@ -105,7 +95,6 @@ useEffect(()=>{
        
         else if(city.day.mintemp_c>=40 ){
              color1 ='#FF0000'
-            //   color2 = '#990 099'
         }
       return color1
   }
@@ -130,9 +119,6 @@ useEffect(()=>{
     color2 ='#CC00CC'
    }
    return color2
-  }
-  const gradient =()=>{
-      return  `linear-gradient(90deg, ${color1()} 0%, ${color2()} 100%)`
   }
   return city ? <>
   <div className="oneCity__forecast-body-item">

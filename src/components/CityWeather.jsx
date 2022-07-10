@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -23,10 +24,7 @@ function CityWeather() {
     const radius = 50
     const [maxTemp, setMaxTemp] = useState(0)
     const [minTemp, setMinTemp] = useState(0)
-    // const [leftLine, setLeftLine] = useState(0)
-    // const [rightLine, setRightLine] = useState(0)
-    // const [midLine, setMidLine] = useState(0)
-    // const [positionCircle, setPositionCircle] = useState(0)
+    
 
     let params = useParams()
 
@@ -41,7 +39,6 @@ function CityWeather() {
           `https://api.weatherapi.com/v1/forecast.json?key=f1a889498689468fba864916221906&q=${params}&days=10&aqi=no&alerts=no`
         )
         .then((res) => {
-          console.log(res.data);
           setCity(res.data);
         
         })
@@ -73,63 +70,8 @@ function CityWeather() {
 
           }
         }
-        // const getDayName = (forecastday) =>{
-        //   let date = new Date(forecastday);
-        //   let day = date.toLocaleString('en-us', {weekday: 'short'});
-        //   return day
-        // }
-        // useEffect(()=>{
-        //   if (city){ 
-        //     let temp =[] 
-        //     let temp2 =[]
-        //     city.forecast.forecastday.map(i => (temp.push(Math.floor(i.day.maxtemp_c))))
-        //     city.forecast.forecastday.map(i => (temp2.push(Math.floor(i.day.mintemp_c))))
-            
-        //     console.log(Math.max(...temp), 'hid');
-        //     console.log(Math.min(...temp2), 'hidd');
-        //     setMaxTemp(Math.max(...temp));
-        //     setMinTemp(Math.min(...temp2))
-          
-        //   }
-        // },[city])
         
-
-        // const left =()=>{
-        // let range=  (maxTemp-minTemp)/10
-        // if( city && Math.floor(city.forecast.forecastday[0].day.mintemp_c)-minTemp !== 0  ){
-          
-        //   let width =(Math.floor(city.forecast.forecastday[0].day.mintemp_c)-minTemp)/range
-        //   return  setLeftLine(Math.ceil(width))
-        //   }
-        //   else if (city && Math.floor(city.forecast.forecastday[0].day.mintemp_c)-minTemp === 0 ){
-
-        //     return  setLeftLine(0)
-        //   }
-        // }
-        //   const middle =()=>{
-        //     let width = 100 - leftLine - rightLine
-        //     return setMidLine(width)
-        //   }
-        // const right =()=>{
-        // let range=  (maxTemp - minTemp)/10
-        //   if(city && maxTemp-Math.floor(city.forecast.forecastday[0].day.maxtemp_c) !== 0){
-
-        //     let width =(maxTemp - Math.floor(city.forecast.forecastday[0].day.maxtemp_c)/range)
-        //     return  setRightLine(Math.floor(width))
-        //   } 
-        //   else if (city && maxTemp-Math.floor(city.forecast.forecastday[0].day.maxtemp_c) === 0 ){
-
-        //     return  setRightLine(0)
-        //   }
-        // }
-
-        // const position =()=>{
-        //   if(city){
-        //     let range =  (city.current.temp_c - minTemp) / (maxTemp - minTemp /10)*100
-        //     return setPositionCircle(Math.floor(range)) 
-        //   }
-        // }
-
+       
   return city ? (
 
     <div className='main'  style={{ backgroundImage: `url(${dayOrNight()})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
@@ -232,11 +174,7 @@ function CityWeather() {
              <WiHumidity/> Humidity
             </div>
             <div className="item__row-body">
-            {/* <div class="gauge">
-  <div class="gauge__body">
-    <div class="gauge__fill" style={{transform: `rotate(${city.current.humidity/100 / 2}turn)`}}></div>
-    <div class="gauge__cover">{city.current.humidity}%</div>
-  </div> */}
+         
   <div id="wrapper">
     <svg id="meter">
     <circle id="outline_curves" r={radius} cx="50%" cy="50%" stroke="#999"
@@ -256,7 +194,6 @@ strokeWidth="8" strokeDasharray={`2, ${radius*Math.PI*2}`} fill="none">
 </div>
 
 </div>
-            {/* </div> */}
           </div>
         </div>
         <div className="oneCity__grid-item">

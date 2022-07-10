@@ -43,16 +43,12 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        &-weather{}
-        &-HL{}
+       
     }
 }
 
 
-.oneCity__grid_hourly {
-}
-.oneCity__grid_forecast {
-}
+
 .oneCity__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -84,34 +80,6 @@
         }
 }
 
-.oneCity__grid-item {
-
-    
-    &-uv{
-        
-    }
-    &-sunset{
-
-    }
-    &-wind {
-
-    }
-    &-totalprecip{
-
-    }
-    &-feelsLike{
-        
-    }
-    &-humidity{
-
-    }
-    &-visibility{
-
-    }
-    &-pressure{
-
-    }
-}
 
 
 
@@ -270,9 +238,7 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
         padding: 10px 15px;
         padding-bottom: 0;
     }
-    &-body{
-      
-    }
+ 
 }
 .oneCity__forecast-body-item{
     display: grid;

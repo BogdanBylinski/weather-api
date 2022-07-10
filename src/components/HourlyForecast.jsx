@@ -1,21 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
-// Import Swiper React components
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
-// import "swiper/css/pagination";
 
 import "../sass/CityWeather.scss";
 
-// import required modules
 import { FreeMode } from "swiper";
 
 export default function HourlyForecast(city) {
   const [daysArr, setDaysArr] = useState([])
   let day=0
-  // const temp= [city.city.current];
   const temp= [];
   useEffect(()=>{
     if(daysArr.length<23)
@@ -29,7 +25,6 @@ export default function HourlyForecast(city) {
      }
      setDaysArr(old => [...old, ...temp])
   },[])
-  console.log(daysArr);
   
   
   return (

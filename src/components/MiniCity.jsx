@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 import { React, useEffect, useState } from "react";
 import "../sass/MiniCitys.scss";
@@ -27,7 +29,6 @@ function MiniCity({ prop, dots, setList, list }) {
 
   useEffect(() => {
     const interval = setInterval(() => tick(), 1000);
-    //   const interval = setInterval(() => setTime(Date.now()), 60000);
     return () => {
       clearInterval(interval);
     };
@@ -71,8 +72,7 @@ function MiniCity({ prop, dots, setList, list }) {
   }, [prop, time, update]);
 
   const remove = (e) => {
-    // e.nativeEvent.stopImmediatePropagation();
-    // e.stopPropagation()
+  
     const newList = list.filter((cities) => cities !== e);
     setList(newList);
     localStorage.setItem("list", JSON.stringify(newList));
@@ -106,15 +106,7 @@ function MiniCity({ prop, dots, setList, list }) {
           className="city__block" onClick={(e)=>navigation(e)}
           style={{ background: `url(${dayOrNight()})` }}
         >
-          {/* <div
-            className={deleteButton}
-            onClick={(e) => remove(city.location.name)}
-          >
-            <div
-              className="delete"
-              onClick={(e) => remove(city.location.name)}
-            ></div>
-          </div> */}
+        
           <div className="city__block_item">
             <div className="city__block_item-big">
               {city.location.name}
