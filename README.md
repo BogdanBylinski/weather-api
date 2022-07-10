@@ -1,3 +1,5 @@
+This project is using JSON data from https://www.weatherapi.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
