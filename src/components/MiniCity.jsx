@@ -123,7 +123,7 @@ function MiniCity({ prop, dots, setList, list }) {
               </span>
             </div>
             <div className="city__block_item-temp">
-              {city.current.temp_c}
+              {Math.floor(city.current.temp_c)}
               <span>&#xb0;</span>
             </div>
           </div>
@@ -132,8 +132,8 @@ function MiniCity({ prop, dots, setList, list }) {
               {city.current.condition.text}
             </div>
             <div className="city__block_item-small">
-              H:{city.forecast.forecastday[0].day.maxtemp_c}
-              <span>&#xb0;</span> L:{city.forecast.forecastday[0].day.mintemp_c}
+              H:{Math.floor(city.forecast.forecastday[0].day.maxtemp_c)}
+              <span>&#xb0;</span> L:{Math.floor(city.forecast.forecastday[0].day.mintemp_c)}
               <span>&#xb0;</span>
             </div>
           </div>

@@ -1,13 +1,23 @@
+#root {
+	background-color: black;
+}
+.App{
+	width: 100%;
+	margin: 0 auto;
+	@media  (min-width: 764px)	{
+		width: 764px;
+	}
+}
 .city__container{
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	width: 50%;
+	width: 70%;
 	// min-height: 100vh;
 
-	@media  (max-width: 900px)	{
-		width: 70%;
+	@media  (min-width: 764px)	{
+		width: 80%;
 	}
 	align-items: center;
 	// margin: 50px auto;
@@ -78,11 +88,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	left: -10%;
-	@media  (max-width: 500px)	{
-		left: -15%
-	}
-	top: 35px;
+	right: -50px;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	// @media  (max-width: 500px)	{
+	// 	left: -15%
+	// }
+	// top: 35px;
 	z-index: 10;
 	.delete{
 		width: 20px;

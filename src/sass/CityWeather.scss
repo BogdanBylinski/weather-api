@@ -32,7 +32,7 @@
 
     &-temp {
         font-weight: 200;
-        font-size: 60px;
+        font-size: 80px;
         padding-left: 30px;
     }
 
@@ -325,14 +325,14 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
 
 
 .oneCity__grid_hourly{
+    width: 95%;
     @media(min-width: 764px){
         width: 98%;
     }
-    width: 95%;
     margin: 0 auto;
     min-height: 130px;
     background-color: rgba(28, 155, 246, 0.2823529412);
-    margin: 20px 0px 10px 10px;
+    margin: 10px auto;
     border-radius: 10px;
     // .swiper{
     //     min-height: 100px;
