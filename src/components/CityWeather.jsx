@@ -131,7 +131,10 @@ function CityWeather() {
         // }
 
   return city ? (
+
     <div className='main'  style={{ backgroundImage: `url(${dayOrNight()})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+      <div className="container">
+
       <div className="oneCity__top">
         <div className="oneCity__top-city">{city.location.name}</div>
         <div className="oneCity__top-temp">{Math.floor(city.current.temp_c)}<span>&#xb0;</span></div>
@@ -142,6 +145,8 @@ function CityWeather() {
               <span>&#xb0;</span></div>
         </div>
       </div>
+      <div className="grid__forecast">
+
         <div className="oneCity__grid_hourly">
         <div className="oneCity__forecast-top">
             <AiOutlineClockCircle/> 24 hours forecast
@@ -156,6 +161,8 @@ function CityWeather() {
             {city.forecast.forecastday.map((e, index)=><Days key={index} city={e} today={city}></Days>)
 }
         </div>
+      </div>
+
       <div className="oneCity__grid">
         <div className="oneCity__grid-item">
           <div className="oneCity__grid-item-uv">
@@ -275,6 +282,8 @@ strokeWidth="8" strokeDasharray={`2, ${radius*Math.PI*2}`} fill="none">
 
 
     </div>
+    </div>
+
   ):('')
 }
 

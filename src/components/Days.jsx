@@ -111,7 +111,7 @@ useEffect(()=>{
      if(city.day.maxtemp_c<-10 && city.day.maxtemp_c <0){
         color2 ='#90ee90'
    }
-   else if(city.day.maxtemp_c<=0 && city.day.maxtemp_c <10){
+   else if(city.day.maxtemp_c>=0 && city.day.maxtemp_c <10){
         color2 ='#3399FF'
    }
    else if(city.day.maxtemp_c>=10 && city.day.maxtemp_c <20){
