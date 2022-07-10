@@ -212,8 +212,8 @@ function CityWeather() {
           <div className="item__row-top">
             <GiWaterDrop/>  Rainfall
             </div>
-            <div className="item__row-rain-body">
-              {city.current.precip_mm} <span>mm</span>
+            <div className="item__row-rain-body centered">
+              {city.current.precip_mm} mm
             </div>
           </div>
         </div>
@@ -222,6 +222,8 @@ function CityWeather() {
         <div className="item__row-top">
              <WiThermometer/> Feels like
             </div>
+            <div className="item__row-body centered"> {city.current.feelslike_c}&#xb0;</div>
+
         </div>
         </div>
         <div className="oneCity__grid-item">
@@ -262,7 +264,8 @@ strokeWidth="8" strokeDasharray={`2, ${radius*Math.PI*2}`} fill="none">
           <div className="item__row-top">
              <MdOutlineVisibility/> Visibility
             </div>
-            <div className="item__row-body">
+            <div className="item__row-body centered">
+              {city.current.vis_km} Km
               
             </div>
           </div>
@@ -272,8 +275,8 @@ strokeWidth="8" strokeDasharray={`2, ${radius*Math.PI*2}`} fill="none">
           <div className="item__row-top">
              <WiBarometer/> Pressure
             </div>
-            <div className="item__row-body">
-              {city.current.pressure_mb} <span>hpa</span>
+            <div className="item__row-body centered">
+              {city.current.pressure_mb} hpa
             </div>
           </div>
         </div>

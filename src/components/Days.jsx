@@ -87,20 +87,23 @@ useEffect(()=>{
   const color1 = ()=>{
       let color1 = '';
     //   let color2 = '';
-      if(city.day.mintemp_c<=10 && city.day.mintemp_c >=0) {
-           color1 = '#90ee90'
+    if(city.day.mintemp_c <0){
+      color1 = '#3399FF'
+    }
+    if(city.day.mintemp_c>=0 && city.day.mintemp_c <10) {
+             color1 ='#66B2FF'
         }
-        else if(city.day.mintemp_c<-10 && city.day.mintemp_c <0){
-             color1 ='#3399FF'
-        }
-        else if(city.day.mintemp_c>10 && city.day.mintemp_c <=20){
-             color1 ='#ffff00'
+        else if(city.day.mintemp_c>=10 && city.day.mintemp_c <=20){
+             color1 ='#90ee90'
         }
         else if(city.day.mintemp_c>20 && city.day.mintemp_c <=30){
-             color1 ='#FFA500'
+             color1 ='#ffff00'
+        } 
+        else if(city.day.mintemp_c>30 && city.day.mintemp_c <40){
+             color1 ='#FF0000'
         } 
        
-        else if(city.day.mintemp_c>30 ){
+        else if(city.day.mintemp_c>=40 ){
              color1 ='#FF0000'
             //   color2 = '#990 099'
         }
@@ -109,10 +112,10 @@ useEffect(()=>{
   const color2 =()=>{
       let color2 =''
      if(city.day.maxtemp_c<-10 && city.day.maxtemp_c <0){
-        color2 ='#90ee90'
+        color2 ='#33eeFF'
    }
    else if(city.day.maxtemp_c>=0 && city.day.maxtemp_c <10){
-        color2 ='#3399FF'
+        color2 ='#66B2FF'
    }
    else if(city.day.maxtemp_c>=10 && city.day.maxtemp_c <20){
         color2 ='#ffff00'
