@@ -1,4 +1,5 @@
 This project is using JSON data from https://www.weatherapi.com/
+
 My  [LinkedIn](https://www.linkedin.com/in/bogdan-bylinski-17a233233/)
 
 
