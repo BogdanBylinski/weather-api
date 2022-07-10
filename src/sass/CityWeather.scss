@@ -164,8 +164,9 @@
             font-size: 10px;
         }
         z-index: 2;
-        left: 36%;
-        top: 33%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
     .windArrow{
         background: rgba(255, 255, 255, 0.8);
@@ -174,7 +175,7 @@
         position: absolute;
         top: 10%;
         transform-origin: 50% 50%;
-        width: 1%;
+        width: 2px;
         // transform: rotateZ(0deg);
         z-index: 1;
         &:after{
@@ -292,11 +293,15 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
         font-size: 15px;
         align-self: center;
         justify-self: center;
-        display: flex;
         gap: 10px;
         width: 100%;
+        display: flex;
         justify-content: space-between;
+        align-items: center;
         color: white;
+        span{
+            min-width: 20px;
+        }
     }
 }
 
@@ -408,6 +413,7 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-size: 25px;
     }
   }
   #meter {
@@ -420,3 +426,56 @@ background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(144,238,144,1) 20%, 
   .outline, #mask {
     stroke: #999;
   }
+
+
+  .mainLine {
+      width: 90%;
+      height: 4px;
+      margin: 20px auto;
+      background-color: grey;
+      display: flex;
+      position: relative;
+      border-radius: 50px;
+      .leftLine {
+          border-radius: 50px;
+          // width: 30%;
+          height: 100%;
+          background-color: transparent;
+          
+          
+        }
+        .midLine{
+            // width: 20%;
+            height: 100%;
+            background-color: red;
+            border-radius: 50px;
+        }
+        .rightLine {
+          border-radius: 50px;
+        // width: 50%;
+        height: 100%;
+        background-color: transparent;
+      }
+      .greyCircle{
+          height: 110%;
+          aspect-ratio: 1;
+          background-color: rgb(15, 128, 214);
+          border-radius: 50px;
+          position: absolute;
+          z-index: 3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          .whiteCircle{
+            height: 50%;
+            aspect-ratio: 1;
+            background-color: white;
+            border-radius: 50px;
+            // position: absolute;
+            z-index: 3;
+          }
+      }
+}
